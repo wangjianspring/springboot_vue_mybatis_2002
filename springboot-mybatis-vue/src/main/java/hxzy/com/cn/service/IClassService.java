@@ -16,4 +16,6 @@ import java.util.List;
 public interface IClassService {
 
     List<ClassModel> queryModel();
+
+    int updateClass(ClassModel cm);
 }

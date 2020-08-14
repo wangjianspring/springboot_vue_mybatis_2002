@@ -24,4 +24,9 @@ public class ClassServiceImpl implements IClassService {
     public List<ClassModel> queryModel() {
         return classModelMapper.findClassModel();
     }
+
+    @Override
+    public int updateClass(ClassModel cm) {
+        return classModelMapper.updateByPrimaryKeySelective(cm);
+    }
 }

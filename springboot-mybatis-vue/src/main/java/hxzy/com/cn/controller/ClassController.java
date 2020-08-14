@@ -1,9 +1,9 @@
 package hxzy.com.cn.controller;
 
 import hxzy.com.cn.domain.ClassModel;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import hxzy.com.cn.service.IClassService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -19,9 +19,15 @@ import java.util.List;
 @RestController
 @RequestMapping("c_class")
 public class ClassController {
+    @Autowired
+    private IClassService classService;
 
     @GetMapping("/queryAll.do")
     public List<ClassModel> queryModel(){
-        return null;
+        return classService.queryModel();
+    }
+    @PostMapping("/updateClass.do")
+    public void updateClass(@RequestBody ClassModel cm){
+        classService.updateClass(cm);
     }
 }
