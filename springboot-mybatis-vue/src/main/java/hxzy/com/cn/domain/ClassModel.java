@@ -42,4 +42,14 @@ public class ClassModel {
     public void setCreatetime(Date createtime) {
         this.createtime = createtime;
     }
+
+    @Override
+    public String toString() {
+        return "ClassModel{" +
+                "id=" + id +
+                ", tname='" + tname + '\'' +
+                ", enable=" + enable +
+                ", createtime=" + createtime +
+                '}';
+    }
 }

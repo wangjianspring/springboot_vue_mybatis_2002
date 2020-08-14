@@ -26,37 +26,6 @@
     values (#{id,jdbcType=INTEGER}, #{tname,jdbcType=VARCHAR}, #{enable,jdbcType=INTEGER}, 
       #{createtime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="hxzy.com.cn.domain.ClassModel" >
-    insert into t_class
-    <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        id,
-      </if>
-      <if test="tname != null" >
-        tname,
-      </if>
-      <if test="enable != null" >
-        enable,
-      </if>
-      <if test="createtime != null" >
-        createTime,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        #{id,jdbcType=INTEGER},
-      </if>
-      <if test="tname != null" >
-        #{tname,jdbcType=VARCHAR},
-      </if>
-      <if test="enable != null" >
-        #{enable,jdbcType=INTEGER},
-      </if>
-      <if test="createtime != null" >
-        #{createtime,jdbcType=TIMESTAMP},
-      </if>
-    </trim>
-  </insert>
   <update id="updateByPrimaryKeySelective" parameterType="hxzy.com.cn.domain.ClassModel" >
     update t_class
     <set >
